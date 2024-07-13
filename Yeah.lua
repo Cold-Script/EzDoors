@@ -76,39 +76,10 @@ local function ESP(child, name, name2, name3)
 		end
 	end)
 end
+while wait() do
 _G.ColorESP = Color3.fromHSV(tick() % 5/5, 1, 1)
---[[Service]]
-w = workspace
-g = game
-r = g.ReplicatedStorage
---[[Script]]
-if GameData.Floor.Value == "Hotel" then
-for _,v in pairs(w:GetDescendants()) do
-if v.Name == "Door" and v.Parent.Name == "Door" then
-ESP(v,"Door")
-elseif v.Name == "KeyObtain" then
-ESP(v,"KeyObtain")
-elseif v.Name == "LeverForGate" then
-ESP(v,"LeverForGate")
-elseif v.Name == "LiveHintBook" then
-ESP(v,"LiveHintBook")
-elseif v.Name == "LiveBreakerPolePickup" then
-ESP(v,"Fuse")
-elseif v.Name == "RushMoving" then
-ESP(v,"Rush")
-elseif v.Name == "AmbushMoving" then
-ESP(v,"Ambush")
-elseif v.Name == "FigureRagdoll" then
-ESP(v,"Figure")
-elseif v.Name == "Screech" then
-ESP(v,"Screech")
-elseif v.Name == "Eyes" then
-ESP(v,"Eyes")
-elseif v.Name == "PickupItem" then
-ESP(v,"Paper")
-     end
 end
-elseif GameData.Floor.Value == "Fools" then
+w = workspace
 for _,v in pairs(w:GetDescendants()) do
 if v.Name == "Door" and v.Parent.Name == "Door" then
 ESP(v,"Door")
@@ -134,44 +105,57 @@ elseif v.Name == "JeffTheKiller" then
 ESP(v,"Jeff (Knife)")
 elseif v.Name == "PickupItem" then
 ESP(v,"Paper")
-     end
-end
-elseif GameData.Floor.Value == "Backdoor" then
-for _,v in pairs(w:GetDescendants()) do
-if v.Name == "Door" and v.Parent.Name == "Door" then
-ESP(v,"Door")
-elseif v.Name == "KeyObtain" then
-ESP(v,"KeyObtain")
 elseif v.Name == "Timer Lever" then
 ESP(v,"Timer Lever")
 elseif v.Name == "BackdoorLookman" then
 ESP(v,"Lookman")
 elseif v.Name == "BackdoorRush" then
 ESP(v,"Blitz")
-     end
+elseif v.Name == "ScaryWall" then
+ESP(v,"")
+elseif v.Name == "RetroScreech" then
+ESP(v,"Screech")
+      end
 end
-elseif GameData.Floor.Value == "Retro" then
-for _,v in pairs(w:GetDescendants()) do
+workspace.ChildAdded:Connect(function(child)
+for _, v in pairs(child:GetDescendants()) do
 if v.Name == "Door" and v.Parent.Name == "Door" then
 ESP(v,"Door")
 elseif v.Name == "KeyObtain" then
 ESP(v,"KeyObtain")
+elseif v.Name == "LeverForGate" then
+ESP(v,"LeverForGate")
+elseif v.Name == "LiveHintBook" then
+ESP(v,"LiveHintBook")
+elseif v.Name == "LiveBreakerPolePickup" then
+ESP(v,"Fuse")
 elseif v.Name == "RushMoving" then
 ESP(v,"Rush")
 elseif v.Name == "AmbushMoving" then
 ESP(v,"Ambush")
-elseif v.Name == "ScaryWall" then
-ESP(v,"")
+elseif v.Name == "FigureRagdoll" then
+ESP(v,"Figure")
+elseif v.Name == "Screech" then
+ESP(v,"Screech")
 elseif v.Name == "Eyes" then
 ESP(v,"Eyes")
+elseif v.Name == "JeffTheKiller" then
+ESP(v,"Jeff (Knife)")
+elseif v.Name == "PickupItem" then
+ESP(v,"Paper")
+elseif v.Name == "Timer Lever" then
+ESP(v,"Timer Lever")
+elseif v.Name == "BackdoorLookman" then
+ESP(v,"Lookman")
+elseif v.Name == "BackdoorRush" then
+ESP(v,"Blitz")
+elseif v.Name == "ScaryWall" then
+ESP(v,"")
 elseif v.Name == "RetroScreech" then
 ESP(v,"Screech")
-      end
-   end
-end
- 
- 
- 
+	  end
+     end
+end)
  
  
  
